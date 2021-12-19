@@ -1,4 +1,4 @@
-package myPackage.list.queue;
+package myPackage.dataStructure.list.queue;
 
 import java.util.List;
 

@@ -35,27 +35,42 @@ public class Employee implements Comparable<Employee> {
     String name;
     Integer age;
     Integer gender;//1 = woman, 0 = man
+    Integer seniority;
 
-    public Employee(String name, int age, int gender) {
+    public Employee(String name, Integer age, Integer gender, Integer seniority) {
         this.name = name;
         this.age = age;
         this.gender = gender;
+        this.seniority = seniority;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Employee)) return false;
         Employee employee = (Employee) o;
-        return name.equals(employee.name) &&
-                age.equals(employee.age) &&
-                gender.equals(employee.gender);
+        return seniority.equals(employee.seniority);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, gender);
+        return Objects.hash(seniority);
     }
+
+    //        @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Employee employee = (Employee) o;
+//        return name.equals(employee.name) &&
+//                age.equals(employee.age) &&
+//                gender.equals(employee.gender);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(name, age, gender);
+//    }
 
     @Override
     public int compareTo(Employee otherEmployee) {
@@ -112,7 +127,7 @@ public class Employee implements Comparable<Employee> {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", gender=" + gender +
+                ", seniority=" + seniority +
                 '}';
     }
-
 }

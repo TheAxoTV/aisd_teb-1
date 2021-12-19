@@ -1,21 +1,17 @@
-package myPackage.list.queue;
+package myPackage.dataStructure.list.queue;
 
 import java.util.List;
 
-
-//------------------------------------- FIFOpriority--------------------------------
+//------------------------------------- FIFO --------------------------------
 //        List<Integer> list = new LinkedList<>(Arrays.asList(3,1,5,0,8,2,6,7,4,9));
-//        FIFOpriority fifo = new FIFOpriority(list);
-//        fifo.add(1);
-//        fifo.add(4);
-//        fifo.add(8);
+//        FIFO fifo = new FIFO(list);
 //
 //
 //        while( fifo.isNotEmpty() ){
 //            System.out.println(fifo.consume());
 //        }
-//        System.out.println("FIFOpriority size = " +fifo.getSize());
-public class FIFOpriority {
+//        System.out.println("FIFO size = " +fifo.getSize());
+public class FIFO {
     List<Integer> queue;
 
     public Integer get(){
@@ -36,7 +32,6 @@ public class FIFOpriority {
 
     public void add(Integer integer) {
         queue.add(integer);
-        queue.sort((int1, int2) -> int2.compareTo(int1));
     }
 
     public int getSize(){
@@ -51,8 +46,7 @@ public class FIFOpriority {
         return !queue.isEmpty();
     }
 
-    public FIFOpriority(List<Integer> queue) {
-        queue.sort((integer, t1) -> t1.compareTo(integer));
+    public FIFO(List<Integer> queue) {
         this.queue = queue;
     }
 }

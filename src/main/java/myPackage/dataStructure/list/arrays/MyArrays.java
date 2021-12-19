@@ -1,6 +1,4 @@
-package myPackage.arrays;
-
-import myPackage.list.queue.FIFO;
+package myPackage.dataStructure.list.arrays;
 
 public class MyArrays {
 
