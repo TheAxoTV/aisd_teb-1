@@ -1,10 +1,11 @@
 package myPackage;
 
-import myPackage.dataStructure.MapStuff;
 import myPackage.dataStructure.SetStuff;
 import myPackage.exercise.Employee;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
