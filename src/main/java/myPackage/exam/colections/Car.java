@@ -25,7 +25,7 @@ public class Car implements Comparable<Car> {
     }
 
     public Integer getLevel() {
-        return this.levelOfEquipment;
+        return levelOfEquipment;
     }
 
     public Integer getId() {
@@ -41,7 +41,10 @@ public class Car implements Comparable<Car> {
     }
 
     public String toString() {
-        return this.isExclusive + "             " + this.yearOfProduction + "               " + this.levelOfEquipment + "               " + this.id + "         " + this.value;
+        return "isExclusive: " + this.isExclusive + "" + "yearofProduction: " + this.yearOfProduction + "" + "levelofEquipment: " +this.levelOfEquipment + "" + "id: " + this.id + "" + "value: "+this.value;
     }
 
+    public Object getLevelOfEquipment() {
+        return  levelOfEquipment;
+    }
 }

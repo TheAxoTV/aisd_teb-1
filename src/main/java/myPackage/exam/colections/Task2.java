@@ -13,13 +13,30 @@ public class Task2 {
     static Car MCLAREN = new Car(true, 2018, 3, 8, 1700000.0D);
     static Car SKODA = new Car(false, 2001, 1, 9, 14000.0D);
     static Car DACIA = new Car(false, 1998, 1, 10, 6000.0D);
-    private static final List<Car> carlist;
 
-    public String getCarList() {
-        return toString();
+    private static final List<Car> carlist = new LinkedList(Arrays.asList(BMW, AUDI, MERCEDES_BENZ, BMW_2, FERRARI, KIA, FORD, MCLAREN, SKODA, DACIA));
+
+
+    public static Car getCarList() {
+        System.out.println("Lista: ");
+        for (Car car : carlist){
+            //return car;
+            //System.out.println(car);
+        }
+        printCarListAfterSomeModification(carlist);
+        printsortedCars();
+        //return toString();
+        //return null;
+        return null;
     }
 
     public static void printsortedCars() {
+
+        //Collections.sort(carlist);
+        //System.out.println();
+        //System.out.println("Dzień dobry");
+        //printCarListAfterSomeModification(carlist);
+        //System.out.println(carlist.size());
         //Wypisz na konsolę listę aut (listę należy zrobić samodzielnie, przygotowanie DOBRYCH danych testowych jest cześcią zadania)
         //lista ma być posotrowana po atrybutach w następującej kolejności:
         //- auta ekskluzywne mają znajdować się na początku listy
@@ -28,17 +45,22 @@ public class Task2 {
         //- auta droższe mają być wyświetlane przed tańszymi
     }
 
-    public static void printCarsToValueAndLevelOfEquipment(Scanner maxValue) {
+    public static void printCarsToValueAndLevelOfEquipment(Double maxValue, Integer levelOfEquipment) {
         //Kontekst biznesowy: klient wchodzi na stronę salonu samochodów używanych i chce zobaczyć auta do pewnej kwoty "maxValue"
         // oraz mające konkretny poziom wyposażenia np: poziom 2 = auto ma klimatyzację, a poziom 1 auto klimatyzacji nie ma itp
         //ZADANIE: wyfiltruj a następnie wypisz auta od najtańszego do najdroższego z listy aut
         //todo tutaj wykonaj zadanie
-        for(Car aCar : carlist){
-            if(aCar.getValue())
-                System.out.println(aCar);
+        getCarList();
+        List<Car> carListFilter = new LinkedList<>();
+        for (Car Car    : carlist) {
+            if(Car.getValue() <= maxValue && Objects.equals(Car.getLevel(), levelOfEquipment)){
+                carListFilter.add(Car);
+            }
         }
-        Collections.sort(carlist);
-
+        Collections.reverse(carListFilter);
+        System.out.println();
+        System.out.println("Przefiltrowana lista wg wartości max: " + maxValue + " i poziomie wyposażenia: " + levelOfEquipment);
+        printCarListAfterSomeModification(carListFilter);
     }
 
     public static void addCardToList() {
@@ -48,34 +70,34 @@ public class Task2 {
         //todo
     }
 
-    public static void printCarListAfterSomeModification() {
+    public static void printCarListAfterSomeModification(List<Car> carlist) {
+
+        for (Car car : carlist){
+            System.out.println(car);
+        }
         //dodaj 2-3 nowe auta do listy
         //usuń z listy 1-2 auta
         // wyświetl listę
     }
 
-    static {
-        carlist = new LinkedList(Arrays.asList(BMW, AUDI, MERCEDES_BENZ, BMW_2, FERRARI, KIA, FORD, MCLAREN, SKODA, DACIA));
-    }
-
     public static void main(String[] args) {
-        System.out.println("Enter maxValue: ");
-        Scanner maxValue = new Scanner(System.in);
 
-        double m = maxValue.nextDouble();
+        //getCarList();
+        System.out.println("Enter maxValue: ");
+        Scanner UserInputValue = new Scanner(System.in);
+
+        double m = UserInputValue.nextDouble();
 
         System.out.println();
-        System.out.println("isExclusive " + "" + "yearofProduction " + "" + "levelofEquipment " + "      " + "id" + "        " + "value ");
-        printCarsToValueAndLevelOfEquipment(maxValue);
+        //printCarsToValueAndLevelOfEquipment(m);
 
         System.out.println("Enter levelOfEquipment: ");
-        Scanner levelOfEquipment = new Scanner(System.in);
+        Scanner UserInputlevelOfEquipment = new Scanner(System.in);
 
-        int l = levelOfEquipment.nextInt();
+        int l = UserInputlevelOfEquipment.nextInt();
 
         System.out.println();
-        System.out.println("isExclusive " + "" + "yearofProduction " + "" + "levelofEquipment " + "      " + "id" + "        " + "value ");
-        printCarsToValueAndLevelOfEquipment(levelOfEquipment);
+        //printCarsToValueAndLevelOfEquipment(levelOfEquipment);
 
     }
 }
