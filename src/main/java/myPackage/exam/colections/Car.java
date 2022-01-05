@@ -1,14 +1,47 @@
 package myPackage.exam.colections;
 
-import java.util.UUID;
 
-public class Car {
-    boolean isExclusive; //true or false
-    int yearOfProduction; // eg 2021, 2015 etc
-    int levelOfEquipment; // 3 > 2 > 1, higher then better
-    UUID id;
-    double value; // how much does it cost for client
+public class Car implements Comparable<Car> {
+    boolean isExclusive;
+    int yearOfProduction;
+    int levelOfEquipment;
+    int id;
+    double value;
 
-    //todo dodaj wszystkie brakujące metody do klasy aby móc jej używać w zadaniu Task2
+    public Car(boolean isExclusive, int yearOfProduction, int levelOfEquipment, int id, double value) {
+        this.isExclusive = isExclusive;
+        this.yearOfProduction = yearOfProduction;
+        this.levelOfEquipment = levelOfEquipment;
+        this.id = id;
+        this.value = value;
+    }
+
+    public boolean getExclusive() {
+        return this.isExclusive;
+    }
+
+    public Integer getYear() {
+        return this.yearOfProduction;
+    }
+
+    public Integer getLevel() {
+        return this.levelOfEquipment;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public double getValue() {
+        return this.value;
+    }
+
+    public int compareTo(Car o) {
+        return 0;
+    }
+
+    public String toString() {
+        return this.isExclusive + "             " + this.yearOfProduction + "               " + this.levelOfEquipment + "               " + this.id + "         " + this.value;
+    }
 
 }
