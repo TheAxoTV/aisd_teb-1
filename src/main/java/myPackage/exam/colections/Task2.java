@@ -58,9 +58,8 @@ public class Task2 {
             }
         }
         Collections.reverse(carListFilter);
-        System.out.println();
-        System.out.println("Przefiltrowana lista wg wartości max: " + maxValue + " i poziomie wyposażenia: " + levelOfEquipment);
         printCarListAfterSomeModification(carListFilter);
+        System.out.println("Fillter maxValue: " + maxValue + "" + "Fillter lvlEquipment: " + levelOfEquipment);
     }
 
     public static void addCardToList() {
