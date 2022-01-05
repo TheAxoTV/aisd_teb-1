@@ -52,7 +52,7 @@ public class Task2 {
         //todo tutaj wykonaj zadanie
         getCarList();
         List<Car> carListFilter = new LinkedList<>();
-        for (Car Car    : carlist) {
+        for (Car Car : carlist) {
             if(Car.getValue() <= maxValue && Objects.equals(Car.getLevel(), levelOfEquipment)){
                 carListFilter.add(Car);
             }
@@ -88,7 +88,7 @@ public class Task2 {
         double m = UserInputValue.nextDouble();
 
         System.out.println();
-        //printCarsToValueAndLevelOfEquipment(m);
+        //printCarsToValueAndLevelOfEquipment();
 
         System.out.println("Enter levelOfEquipment: ");
         Scanner UserInputlevelOfEquipment = new Scanner(System.in);
