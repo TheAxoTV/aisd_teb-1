@@ -41,7 +41,7 @@ public class Car implements Comparable<Car> {
     }
 
     public String toString() {
-        return "isExclusive: " + this.isExclusive + "" + "yearofProduction: " + this.yearOfProduction + "" + "levelofEquipment: " +this.levelOfEquipment + "" + "id: " + this.id + "" + "value: "+this.value;
+        return "isExclusive: " + this.isExclusive + " " + "yearofProduction: " + this.yearOfProduction + " " + "levelofEquipment: " +this.levelOfEquipment + " " + "id: " + this.id + " " + "value: "+this.value;
     }
 
     public Object getLevelOfEquipment() {

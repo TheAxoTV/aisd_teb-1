@@ -20,7 +20,7 @@ public class Task2 {
     public static Car getCarList() {
         System.out.println("Lista: ");
         for (Car car : carlist){
-            //return car;
+            return car;
             //System.out.println(car);
         }
         printCarListAfterSomeModification(carlist);
@@ -31,21 +31,9 @@ public class Task2 {
     }
 
     public static void printsortedCars() {
-
-        //Collections.sort(carlist);
-        //System.out.println();
-        //System.out.println("Dzień dobry");
-        //printCarListAfterSomeModification(carlist);
-        //System.out.println(carlist.size());
-        //Wypisz na konsolę listę aut (listę należy zrobić samodzielnie, przygotowanie DOBRYCH danych testowych jest cześcią zadania)
-        //lista ma być posotrowana po atrybutach w następującej kolejności:
-        //- auta ekskluzywne mają znajdować się na początku listy
-        //- auta najnowsze, o najwyższym roku produkcji, mają być wyświetlane przed autami starszymi
-        //- auta o wyższym poziomie wyposażenia mają być przed autami o niższym poziomie wyposażenia
-        //- auta droższe mają być wyświetlane przed tańszymi
     }
 
-    public static void printCarsToValueAndLevelOfEquipment(Double maxValue, Integer levelOfEquipment) {
+    public static List<Car> printCarsToValueAndLevelOfEquipment(Double maxValue, Integer levelOfEquipment) {
         //Kontekst biznesowy: klient wchodzi na stronę salonu samochodów używanych i chce zobaczyć auta do pewnej kwoty "maxValue"
         // oraz mające konkretny poziom wyposażenia np: poziom 2 = auto ma klimatyzację, a poziom 1 auto klimatyzacji nie ma itp
         //ZADANIE: wyfiltruj a następnie wypisz auta od najtańszego do najdroższego z listy aut
@@ -59,7 +47,8 @@ public class Task2 {
         }
         Collections.reverse(carListFilter);
         printCarListAfterSomeModification(carListFilter);
-        System.out.println("Fillter maxValue: " + maxValue + "" + "Fillter lvlEquipment: " + levelOfEquipment);
+        System.out.println("Fillter maxValue: " + maxValue + "    " + " Fillter lvlEquipment: " + levelOfEquipment);
+        return carListFilter;
     }
 
     public static void addCardToList() {
@@ -74,29 +63,24 @@ public class Task2 {
         for (Car car : carlist){
             System.out.println(car);
         }
-        //dodaj 2-3 nowe auta do listy
-        //usuń z listy 1-2 auta
-        // wyświetl listę
     }
 
     public static void main(String[] args) {
 
-        //getCarList();
         System.out.println("Enter maxValue: ");
         Scanner UserInputValue = new Scanner(System.in);
-
-        double m = UserInputValue.nextDouble();
+        double maxvalue = UserInputValue.nextDouble();
 
         System.out.println();
-        //printCarsToValueAndLevelOfEquipment();
 
         System.out.println("Enter levelOfEquipment: ");
         Scanner UserInputlevelOfEquipment = new Scanner(System.in);
+        int levelofeq = UserInputlevelOfEquipment.nextInt();
 
-        int l = UserInputlevelOfEquipment.nextInt();
+        System.out.println(printCarsToValueAndLevelOfEquipment(maxvalue, levelofeq));
 
-        System.out.println();
-        //printCarsToValueAndLevelOfEquipment(levelOfEquipment);
+
+
 
     }
 }
